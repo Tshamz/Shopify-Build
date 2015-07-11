@@ -1,0 +1,36 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  background-color: $almost-black;
+  box-sizing: border-box;
+  color: $almost-white;
+  font-family: sans-serif;
+  font-size: 100%;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+img {
+	max-width: 100%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+input:focus::-webkit-input-placeholder { color:transparent !important; }
+input:focus:-moz-placeholder { color:transparent !important; }
+input:focus::-moz-placeholder { color:transparent !important; }
+input:focus:-ms-input-placeholder { color:transparent !important; }
+
+#admin_bar_iframe {  // hide the stupid shopify admin bar
+  display: none !important;
+}

@@ -1,0 +1,50 @@
+.breadcrumb {
+	margin-bottom:1.5rem;
+	padding-left:3px;
+	a,span {
+		font-size:0.75rem;
+		letter-spacing:0.025rem;
+		color:$alt-gray;
+		text-transform:uppercase;
+	}
+	a {
+		color:$alt-gray;
+		text-transform:uppercase;
+	}
+	span {
+		&.page-title {
+			text-transform:uppercase;
+		}
+		&.separator {
+			padding:0 0.35rem;
+			line-height:1rem;
+			font-size:1rem;
+		}
+	}
+	@include min-large-tablet {
+		margin:1rem 0;
+	}
+
+	@include max-large-tablet {
+		padding:8px 2px;
+		margin:0 !important;
+		text-align:center;
+		a,span {
+			font-size:0.65rem !important;
+		}
+	}
+	@include mobile-only {
+		text-align:center;
+		margin-top:0rem;
+		margin-bottom:0.3rem;
+		padding:4px 0 0 4px;
+		span.separator {
+			padding:0 2px;
+		}
+		a,span {
+			font-size:0.65rem !important;
+			
+		}
+	}
+
+}

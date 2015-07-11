@@ -1,0 +1,71 @@
+body {
+  transition: margin 0.5s;
+  @include min-tablet {
+    &.join-email-is-active {
+      margin-top: 275px;
+    }
+    &.join-email-is-inactive {
+      margin-top: 0;
+    }
+  } 
+}
+
+#header-topbar {
+  display: none;
+  background: $dark;
+  width: 100%;
+  color: $white;
+  height: $topbar-height;
+  margin-top: 0 !important;
+  @include max-large-tablet {
+    height: auto;
+    display:none !important;
+  }
+  .valign-mid {
+    display: inline-block;
+    line-height: $topbar-height;
+  }
+  .join-email {
+    @extend %montbold;
+    letter-spacing: 1px;
+    padding: 0 40px 0 56px;
+    background-color: $shark-black;
+    cursor: pointer;
+    &::before {
+      margin: 10px 0 0 -20px;
+    }
+    &.is-active::before {
+      @include triangle(up, 10px, $white);
+    }
+    &.is-inactive::before {
+      @include triangle(down, 10px, $white);
+    }
+  }
+  .connect-with-us {
+    @extend %meritalic;
+    display: none;
+    padding-left:12px;
+    
+    @include desktop {
+      display: block;
+    }
+  }
+  .topbar-social-links > a {
+    margin-right: 25px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  @include min-tablet {
+    display: block;
+    margin-top: 40px;
+  }
+}
+
+
+.topbar-social-links > a {
+  margin-right: 25px;
+  &:last-child {
+    margin-right: 0;
+  }
+}

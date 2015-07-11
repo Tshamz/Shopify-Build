@@ -1,0 +1,49 @@
+.nilous-picks-banner {
+  background-color: #fafbfb;
+  color: $outer-space;
+  text-align: center;
+  padding: 55px 0 72px;
+  border-bottom: 1px solid #f3f5f6;
+  overflow: hidden;
+  @include max-large-tablet {
+    background-image: none;
+  }
+  @include mobile-only {
+    padding: 30px 0 42px;
+  }
+  .container {
+    position: relative;
+    h1 {
+      text-transform: uppercase;
+      font-size: 37px;
+      letter-spacing: 5px;
+      margin-top: 0;
+      @include mobile-only {
+        font-size: 30px;
+        letter-spacing: 3px;
+      }
+      &:after {
+        content: "";
+        background: $dove-gray;
+        width: 59px;
+        height: 3px;
+        display: block;
+        margin: 8px auto 19px;
+      }
+    }
+    h2 {
+      font-family: $meri;
+      font-size: 19px;
+      letter-spacing: 0.3px;
+      font-style: italic;
+      @include mobile-only {
+        font-size: 16px;
+      }
+    }
+  }
+  .nilous-picks-banner-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}

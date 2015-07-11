@@ -1,0 +1,54 @@
+.join-email-form {
+  display: none;
+  input.form-control {
+    display:block;
+  }
+  @include min-large-tablet {
+    display: block;
+    width: 500px;
+    height: 250px;
+    margin: -250px auto 0;
+    transition: opacity 0.5s;
+    &.is-active {
+      opacity: 1.0;
+    }
+    &.is-inactive {
+      opacity: 0.0;
+    }
+  }
+}
+
+.join-email-form-heading {
+  @extend %montreg;
+  margin-bottom: 25px;
+}
+
+.join-email-form-message {
+  @extend %montreg;
+  margin-bottom: 25px;
+}
+
+.join-email-form form {
+  border: 2px solid $dark;
+  input[type="email"] {
+    @extend %montreg;
+    width: 75%;
+    color: $dark;
+    border: none;
+    line-height: 50px;
+    padding: 0 25px;
+    height:50px;
+    @include transition(all 200ms ease-out);
+    &:focus, &:active {
+      color:#fff;
+      background:$outer-space;
+    }
+  }
+  button {
+    @extend %montreg;
+    width: 25%;
+    color: $white;
+    background-color: $dark;
+    line-height: 50px;
+  }
+}

@@ -1,0 +1,113 @@
+.touch-inline {
+  display:inline;
+}
+.template-collection {
+  .main-container {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+.collection-grid {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  @include desktop {
+    width: 75%;
+    &.four-grid {
+      width: 100%;
+    }
+  }
+}
+
+.product-grid-item {
+  flex-basis: 50%;
+  padding: 0.25rem;
+  @include min-tablet {
+    -ms-flex-preferred-size: 32.25%;
+    flex-basis: 33%;
+    padding: 0 0.25rem;
+    img {
+      width: 100%;
+    }
+  }
+  @include mobile-only {
+    padding: 0 0.25rem;
+    margin: 0;
+  }
+  .item-image {
+    a {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+.collection-grid.four-grid {
+  .product-grid-item {
+    @include min-tablet {
+      -ms-flex-preferred-size: 24.25%;
+      flex-basis: 25%;
+    }
+  }
+}
+
+
+
+// back to top
+.cd-top.cd-is-visible {
+  /* the button becomes visible */
+  visibility: visible;
+  opacity: 1;
+}
+.cd-top.cd-fade-out {
+  /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+  opacity: .5;
+}
+
+.cd-top {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+
+  position: fixed;
+  z-index: 999;
+  bottom: 40px;
+  right: 10px;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+
+  /* image replacement properties */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+
+  background: rgba(32, 36, 38, .8) url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAChSURBVDiNzc/NCkFRFIbhk/J3cg1yHwZyw0R+Y8ItGEsZGYvxY0LntM/moJRvuPf7fmutJPnroIrqt3INA0xQ/0YeyjJD4xN5pJh5aQnqGEfkRxZoPpObWAbCBcfgbVkoQYpVAF7RRxv74G+DVl5ex+TcgFjJFq0E08javciJHRwCdpqgi3NscqQkv0nG3ktOr+SgZFdgkZbJObbyLvv73ABE0GxO/L8nGwAAAABJRU5ErkJggg==') no-repeat center 50%;
+
+  visibility: hidden;
+  opacity: 0;
+
+  -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+  -moz-transition: opacity .3s 0s, visibility 0s .3s;
+  transition: opacity .3s 0s, visibility 0s .3s;
+
+  &.cd-is-visible, &.cd-fade-out, .no-touch &:hover {
+    -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+    -moz-transition: opacity .3s 0s, visibility 0s 0s;
+    transition: opacity .3s 0s, visibility 0s 0s;
+  }
+
+  &.cd-is-visible { /* the button becomes visible */
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &.cd-fade-out { /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+    opacity: .5;
+  }
+
+  .no-touch &:hover {
+    background-color: rgba(32, 36, 38, 1);
+    opacity: 1;
+  }
+}

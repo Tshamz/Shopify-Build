@@ -1,0 +1,50 @@
+.template-404 {
+  .main-container {
+    max-width: 100%;
+  }
+  .home-tile img {
+    width: 100%;
+  }
+}
+
+.four-oh-four {
+  position: relative;
+  border-bottom: 1px solid rgb(228, 228, 228);
+  line-height: 1;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  h1 {
+    font-size: 8rem;
+    font-weight: 600;
+    color: #e0e0e0;
+  }
+  p {
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    background-color: #fff;
+    white-space: nowrap;
+  }
+  .manually-centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.snooze-and-lose {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  h2 {
+    font-size: 1.7rem;
+    font-weight: bold;
+  }
+  p {
+    @extend %merireg;
+    color: $dove-gray;
+    font-size: 0.65rem;
+    font-weight: 400;
+  }
+}

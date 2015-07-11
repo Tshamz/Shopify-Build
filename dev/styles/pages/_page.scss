@@ -1,0 +1,55 @@
+.basic-page {
+  width: 75%;
+  margin: 35px auto 50px;
+  @include mobile-only {
+    width: 95%;
+  }
+  h1 {
+    margin-bottom: 15px;
+  }
+  p {
+    margin-bottom: 10px;
+  }
+  ul,
+  ol {
+    margin: 15px 0;
+    padding-left: 30px;
+    list-style: none;
+  }
+  ul.thedesigners {
+    margin-bottom: 36px;
+    &:after {
+      content: "";
+      display: block;
+      width: 100%;
+      clear: both;
+    }
+    li {
+      display: block;
+      a {
+        font-size: 16px;
+        display: block;
+        padding: 4px 0;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    li:nth-child(odd) {
+      float: left;
+      width: 50%;
+    }
+    li:nth-child(even) {
+      float: right;
+      width: 50%;
+    }
+  }
+  @media only screen and (max-width: 641px) {
+    ul.thedesigners {
+      li {
+        float: none;
+        width: 100%;
+      }
+    }
+  }
+}

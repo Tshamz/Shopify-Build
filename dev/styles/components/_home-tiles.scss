@@ -1,0 +1,141 @@
+.home-tiles {
+	width:100%;
+	margin:0 auto;
+	article {
+		margin-bottom:-4px;
+		overflow:hidden;
+		@include max-large-tablet {
+			margin-bottom:0;
+		}
+	}
+
+}
+.home-tiles img {
+	width:100%;
+	position:relative;
+}
+
+.home-tile {
+	position:relative;
+	padding:0 2px 2px 2px;
+	-webkit-backface-visibility:hidden;
+	@include transform(translate3d(0,0,0));
+	-webkit-perspective:1000;
+	-webkit-font-smoothing: antialiased;
+	a {
+
+	}
+	hgroup {
+		position:absolute;
+		top:50%;
+		left:50%;
+		@include transform(translate3d(0,-51%,0));
+		-webkit-backface-visibility:hidden;
+		z-index:2;
+		text-align:center;
+		padding:0rem 0.5rem;
+		display:block;
+		min-width:50%;
+		margin-left:-25%;
+		 @include max-large-tablet {
+		 	width:60%;
+		 	margin-left:-30% ;
+		 }
+	}
+	
+	h4 {
+		font-family:$meri;
+		font-size:0.875rem;
+		color:$alt-gray();
+		text-decoration:underline;
+		font-style:italic;
+	}
+	h2 {
+		font-size:1.25rem;
+		font-family:$mont;
+		background:rgba(255,255,255,1); 
+		padding:0.2rem 0.5rem;
+		color:$shark-black;
+		letter-spacing:-0.035em;
+		text-transform:uppercase;
+		font-weight:700;
+		-webkit-backface-visibility:hidden;
+		-webkit-perspective:1000;
+		@include max-large-tablet {
+			background:rgba(255,255,255,1);
+			line-height:1;
+		}
+	}
+	p {
+		font-size:0.875rem;
+		font-family:$meri; 
+		font-style:italic;
+		color:$outer-space;
+	}
+	h4,h2,p {
+		-webkit-font-smoothing: antialiased;
+	}
+	&:hover {
+		h4 {
+			color:$outer-space;
+		}
+	}
+}
+
+.top-block {
+	.home-tile {
+		padding-bottom:0;
+	}
+}
+.tile1 {
+	padding-left:0;
+}
+.tile2 {
+	padding-right:0;
+}
+.tile4 {
+	padding:0 1px 1px 1px;
+}
+.tile3 {
+	padding-left:0;
+}
+.tile5 {
+	padding-right:0;
+	@include max-large-tablet {
+		margin-bottom:-8px;
+	}
+}
+.tile1, .tile2 {
+	float:left;
+	width:50%;
+	@include max-large-tablet {
+		float:none;
+		width:100%;
+		padding:0;
+	}
+}
+
+.tile3, .tile4,.tile5 {
+	float:left;
+	width:33.3%;
+	@include max-large-tablet {
+		float:none;
+		width:100%;
+		padding:0;
+	}
+}
+
+.no-touch {
+	.home-tile {
+		hgroup {
+			@include transform(translate3d(0,-51%,0));
+			-webkit-backface-visibility:hidden;
+			-webkit-font-smoothing: subpixel-antialiased;
+			-webkit-perspective-origin: 50% 50%;
+			-webkit-perspective: 1400px;
+			min-width:50%;
+
+		}
+
+	}
+}

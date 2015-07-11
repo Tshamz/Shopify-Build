@@ -1,0 +1,32 @@
+.row:before, .row:after, .container:before, .container:after {
+	display:table;
+	content: "";
+}
+.container:after, .row:after {
+	clear: both;
+}
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  width:100%;
+  @include desktop {
+    max-width:1170px;
+  }
+  &.with-gutter {
+    padding-right: 15px;  // add gutters to containers
+    padding-left: 15px;
+  }
+  &.max960 {
+    max-width: 960px;
+  }
+  &.max760 {
+    max-width: 760px;
+    margin:0 auto;
+  }
+}
+
+.main-container {
+  @include desktop {
+    min-height:600px;
+  }
+}

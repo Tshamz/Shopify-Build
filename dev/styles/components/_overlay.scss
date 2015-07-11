@@ -1,0 +1,49 @@
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10000;
+  background-color: rgba(30, 30, 30, 0.7);
+  background-image: linear-gradient(#000, lighten(#2e3336, 30%));
+  opacity: 0.7;
+}
+
+.overlay-container {
+  display: none;
+  position: fixed; // Make sure to set top:; & left:; of each .overlay-container
+  z-index: 10001;
+}
+
+.overlay-containers {
+  &[active-overlay=inline-cart] {
+    .quick-shop-modal {
+      z-index: 999;
+    }
+  }
+}
+
+.shipping-policy-popup.overlay-container {
+  top: 15px !important;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  .close-shipping {
+    z-index: 1;
+    transform: scale(1.5);
+  }
+}
+
+.shipping-returns {
+  background-color: #FFF;
+  position: relative;
+  padding: 10px 30px;
+  height: 100%;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  strong {
+    display:inline !important;
+  }
+}

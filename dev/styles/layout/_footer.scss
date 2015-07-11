@@ -1,0 +1,233 @@
+// empty
+footer {
+	position:relative;
+    align-items: flex-start;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 40px 20px;
+    text-align: center;
+    @include min-mobile {
+    	text-align: left;
+    	flex-flow: row nowrap;
+    }
+    @include tablet {
+    	padding: 60px 30px;
+    }
+	@include desktop {
+		align-content: flex-start;
+		padding: 80px 40px;
+		justify-content: flex-start;
+	}
+	background-color: $outer-space;
+	&, .footer-link {
+		color: $porcelain;
+	}
+	.footer-link {
+		&:hover {
+			color:#fff;
+			text-decoration:underline;
+		}
+	}
+	address {
+		font-size: 12px;
+		font-style: normal;
+		@extend %merireg;
+		display: none;
+		@include min-tablet {
+			display: block;
+		}
+	}
+}
+.footer-linklist {
+	line-height: 2;
+	display: none;
+	@include desktop {
+		display: block;
+	}
+	> * {
+		display: block;
+	}
+	a {
+		text-transform: uppercase;
+	}
+} 
+.footer-credit {
+	display: none;
+	@extend %merireg;
+	@extend .text-center;
+	@include desktop {
+		background-color: $shark-black;
+		color: $dove-gray;
+		display: block;
+		padding: 10px;
+	}
+	.street-cred {
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+		height: 16px;
+	  transition: transform 400ms;
+	  -moz-transition: -moz-transform 400ms;
+	  -o-transition: -moz-transform 400ms;
+	  -webkit-transition: -webkit-transform 400ms;
+	  -ms-transition: -ms-transform 400ms;
+		&:hover {
+			a.cred-link {
+			  -webkit-transform: translate(0px, 36px);
+			  -moz-transform: translate(0px, 36px);
+			  -ms-transform: translate(0px, 36px);
+			  -o-transform: translate(0px, 36px);
+			}
+			a.bva {
+			  -webkit-transform: translate(0px, 0px);
+			  -moz-transform: translate(0px, 0px);
+			  -ms-transform: translate(0px, 0px);
+			  -o-transform: translate(0px, 0px);
+			}
+		}
+		a {
+		  transition: transform 400ms;
+		  -moz-transition: -moz-transform 400ms;
+		  -o-transition: -moz-transform 400ms;
+		  -webkit-transition: -webkit-transform 400ms;
+		  -ms-transition: -ms-transform 400ms;
+		  display: inline-block;
+		}
+		a.bva {
+		  width: 68px;
+		  height: 17px;
+		  display: block;
+		  @include background-file( 'logo-bvaccel.png' );
+		  background-position: center center;
+		  background-repeat: no-repeat;
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  z-index: 3;
+		  -webkit-transform: translate(0px, -36px);
+		  -moz-transform: translate(0px, -36px);
+		  -ms-transform: translate(0px, -36px);
+		  -o-transform: translate(0px, -36px);
+		}
+	}
+}
+.footer-block {
+	&:first-child {
+		img {
+			margin-bottom:20px;
+			margin-top:4px;
+				@include max-large-tablet {
+					margin-bottom:36px;
+				}
+		}
+	}
+
+	&:last-child {
+		margin-left: auto;
+		min-width:280px;
+	}
+	@include mobile-only {
+		flex-basis: 100%;
+	}
+
+	@include desktop {
+		& + .footer-block {
+			margin-left: 10%;
+		}
+
+	}
+	@include max-large-tablet {
+		.footer-newsletter:before {
+			content:'Sign up to receive the latest Heist Ensembles!';
+			display:block;
+			width:100%;
+			top:-24px;
+			left:0;
+			position:absolute;
+			color:$porcelain;
+			text-align:center; 
+			height:24px;
+			font-size:12px;
+			font-family:$meri;
+		}
+	}
+
+}
+.social-title {
+	color: #fff;
+	@extend %meritalic;
+	@include mobile-only {
+		display: none;
+	}
+	@include desktop {
+		margin-bottom:0.5rem;
+	}
+}
+.social-links {
+	> a {
+		font-size: 28px;
+		color: $porcelain;
+		display: inline-block;
+	}
+	@include mobile-only {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-around;
+		a {
+			min-width:85px;
+			border-right:1px solid $shark-black;
+			&:last-child {
+				border-right:0 none;
+			}
+		}
+	}
+	@include min-mobile {
+		> a {
+			& + a {
+				margin-left: 35px;
+			}
+		}
+	}
+}
+.footer-newsletter {
+	position:relative;
+	@include mobile-only {
+		margin-top: 20px;
+		margin-bottom:40px;
+	}
+	.input {
+		font-size: 12px;
+		padding: 14px;
+		border: none;
+		margin-bottom: 20px;
+		position:relative;
+		z-index:1;
+		display:block;
+		width:100%;
+		outline:0 none !important;
+		@extend %meritalic;
+		&::placeholder {
+			opacity: 1;
+		}
+		@include mobile-only {
+			width: 100%;
+		}
+	}
+	.submit {
+		background-color: #fff;
+		padding: 12px;
+		color: $shark-black;
+		position:absolute;
+		top:0;
+		right:7px;
+		z-index:5;
+		@include mobile-only {
+		
+			z-index:2;
+		}
+		@include min-mobile {
+			float: right;
+		}
+	}
+}
