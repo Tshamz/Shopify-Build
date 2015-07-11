@@ -27,19 +27,6 @@ var plumberErrorHandler = {
   })
 };
 
-// .pipe(notify({
-//   message: "Template: <%= file.relative %>",
-//   title: function (file) {
-//     if(file.isNull()) {
-//       return "Folder:";
-//     }
-//     return "File: <%= file.relative %> <%= options.extra %>";
-//   },
-//   templateOptions: {
-//     extra: "foo"
-//   }
-// }));
-
 gulp.task('styles', function() {
   return gulp.src(['dev/styles/main.scss'])
     .pipe(plumber(plumberErrorHandler))
@@ -59,6 +46,7 @@ gulp.task('scripts', function() {
     .pipe(concat('main.js'))
     .pipe(uglify())
     .pipe(sourcemaps.write())
+    .pipe(rename({ suffix: '.js', extname: '.liquid' }))
     .pipe(gulp.dest('deploy/assets'));
 });
 
