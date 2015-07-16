@@ -1,16 +1,16 @@
 {
   "shopify": {
     "staging": {
-      "apiKey": "298722938d3647ebbfd884c0762fc40a",
-      "password": "dcd3dddaa930eff22c5155333951cccd",
-      "url": "staging-shopheist.myshopify.com",
+      "apiKey": "[apikey]",
+      "password": "[password]",
+      "url": "[url].myshopify.com",
       "themeId": null,
       "options": {"basePath": "deploy/"}
     },
-    "staging-heist": {
-      "apiKey": "38e69e9cc51009525c0b8eeebcccfa19",
-      "password": "f19ae904a25da2359b5d0afb6a96b07c",
-      "url": "staging-heist.myshopify.com",
+    "staging-billy": {
+      "apiKey": "[apikey]",
+      "password": "[password]",
+      "url": "[url].myshopify.com",
       "themeId": null,
       "options": {"basePath": "deploy/"}
     }
