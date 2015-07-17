@@ -43,6 +43,13 @@ After cloning the repository and moving into its root, from the command line run
 - `upload`  sets up a watch on all directories in deploy/ and uploads changed files to a Shopify store. It's worth noting that if this task is run without any options, nothing will happen. This task accepts arguments in the form of 
 `--env [environment name]`, where `[environment name]` is the attribute inside of "./config.js that holds all the relavent data for the store you want to upload to (e.g. api key). If `--env` is entered, but no environment given, it defaults to "staging"
 
+### Commonly run tasks
+`gulp` - cleans, rebuilds, and watches theme files without uploading to a Shopify store
+`gulp --env` - cleans, rebuilds, and watches theme files, and uploads 'staging' in config.json
+`gulp --env [environment name]` - cleans, rebuilds, and watches theme files, and uploads [environment name] in config.json
+
+---
+
 Keep in mind that simply running `gulp` will fire off a number of those tasks in a specific order designed to make your development as easy as possible. Ideally you would only need to run `gulp` (or `gulp --env [environment name]`) once at the start of your project and then never again interact with the build tool while it takes care of chores for you in the background.
 
 ---
