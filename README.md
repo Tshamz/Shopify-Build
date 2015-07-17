@@ -45,7 +45,9 @@ After cloning the repository and moving into its root, from the command line run
 
 ### Commonly run tasks
 `gulp` - cleans, rebuilds, and watches theme files without uploading to a Shopify store
+
 `gulp --env` - cleans, rebuilds, and watches theme files, and uploads 'staging' in config.json
+
 `gulp --env [environment name]` - cleans, rebuilds, and watches theme files, and uploads [environment name] in config.json
 
 ---
