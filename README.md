@@ -44,11 +44,11 @@ After cloning the repository and moving into its root, from the command line run
 `--env [environment name]`, where `[environment name]` is the attribute inside of "./config.js that holds all the relavent data for the store you want to upload to (e.g. api key). If `--env` is entered, but no environment given, it defaults to "staging"
 
 ### Commonly run tasks
-`gulp` - cleans, rebuilds, and watches theme files without uploading to a Shopify store
+`gulp` -cleans, rebuilds, and watches theme files without uploading to a Shopify store
 
-`gulp --env` - cleans, rebuilds, and watches theme files, and uploads 'staging' in config.json
+`gulp --env` -cleans, rebuilds, watches theme files, and uploads to 'staging' in config.json
 
-`gulp --env [environment name]` - cleans, rebuilds, and watches theme files, and uploads [environment name] in config.json
+`gulp --env [environment name]` -cleans, rebuilds, watches theme files, and uploads to [environment name] in config.json
 
 ---
 
