@@ -28,3 +28,5 @@ node_modules
 
 # User
 .DS_Store
+*.sublime-project
+*.sublime-workspace

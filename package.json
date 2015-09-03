@@ -1,11 +1,11 @@
 {
-  "name": "BVAccelHeist",
+  "name": "BVAccel[project]",
   "version": "0.1.0",
-  "description": "Heist",
+  "description": "BVAccel [project]",
   "keywords": "Shopify",
   "license": "MIT",
   "author": "Brand Value Accelerator",
-  "main": "Gruntfile.js",
+  "main": "Gulpfile.js",
   "engines": {
     "node": ">= 0.10.33"
   },

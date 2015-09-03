@@ -7,7 +7,7 @@
       "themeId": null,
       "options": {"basePath": "deploy/"}
     },
-    "staging-billy": {
+    "dev": {
       "apiKey": "[apikey]",
       "password": "[password]",
       "url": "[url].myshopify.com",
