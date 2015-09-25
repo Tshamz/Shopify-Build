@@ -12,7 +12,7 @@ This repository contains a fully capable Gulpfile.js intended for use with Shopi
 - Compile, concatenate, autoprefix, and minify all your vendor JavaScript and .scss/.css into their own vendor.js/vendor.css files
 - Inline sourcemaps to both main.js and main.css to help with debugging
 - After initial build, will watch your theme files and preforming the necessary tasks on change
-- Optionally upload any changed file to a Shopify store of your choosing, without needing to worry about VCS and overwriting someone else's files
+- Optionally & automatically upload any changed file directly to a Shopify environment of your choosing
 
 ## Installation
 
