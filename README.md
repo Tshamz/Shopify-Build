@@ -12,13 +12,9 @@ This repository contains a fully capable Gulpfile.js intended for use with Shopi
 - After initial build, will watch your theme files and preforming the necessary tasks on change
 - Optionally upload any changed file to a Shopify store of your choosing, without needing to worry about VCS and overwriting someone else's files
 
----
-
 ## Installation
 
 After cloning the repository and moving into its root, from the command line run `npm install`. After the installation completes, you'll have access to to all of the gulp tasks.
-
----
 
 ## Tasks
 
@@ -39,10 +35,6 @@ After cloning the repository and moving into its root, from the command line run
 - `gulp --env` -cleans, rebuilds, watches theme files, and uploads to whatever the default environment has been set to in the Gulpfile.
 - `gulp --env [environment name]` -cleans, rebuilds, watches theme files, and uploads to [environment name] in config.json
 
----
-
 Keep in mind that simply running `gulp` will fire off a number of those tasks in a specific order designed to make your development as easy as possible. Ideally you would only need to run `gulp` (or `gulp --env [environment name]`) once at the start of your project and then never again interact with the build tool while it takes care of chores for you in the background.
-
----
 
 Submit a pull request or share if you have any additional ideas.
