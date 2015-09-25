@@ -6,17 +6,11 @@ This repository contains a fully capable Gulpfile.js intended for use with Shopi
 #### Things this build tool includes and/or will do:
 - Build a proper directory structure for your theme to be uploaded
 - Compile, autoprefix, and minify your .scss to .css (strictly using libsass)
-- A (close to) 1:1 match of all Compass mixins
 - Concatenate and minify your JavaScript files
 - Compile, concatenate, autoprefix, and minify all your vendor JavaScript and .scss/.css into their own vendor.js/vendor.css files
-- Minify all your theme's images, including any added in the midst of the build process
 - Inline sourcemaps to both main.js and main.css to help with debugging
 - After initial build, will watch your theme files and preforming the necessary tasks on change
 - Optionally upload any changed file to a Shopify store of your choosing, without needing to worry about VCS and overwriting someone else's files
-
-#### This this tool will not do (but could/should one day):
-- Upload an entire theme (all theme files) at once to a Shopify store
-- Pre-render liquid templates enabling local development
 
 ---
 
@@ -36,19 +30,14 @@ After cloning the repository and moving into its root, from the command line run
 - `styles`  compiles, autoprefixes, minifies, attaches sourcemap, and renames main.scss manifest located in dev/styles to deploy/assets/main.css.liquid
 - `scripts`  concatenates, minifies, attaches sourcemap, and renames every .js file located in dev/scripts to deploy/assets/scripts.js.liquid
 - `vendor` compiles, concatenates, autoprefixes, and minifies every .scss file located in vendor/styles and every .js file located in vendor/scripts into deploy/assets/vendor.css and deploy/assets/vendor.js
-- `imagemin`  minifies every image located in dev/images into deploy/assets
 - `copy`  copies every file in dev/liquid into deploy/ carrying the same directory structure
-- `build`  runs and completes `clean` before running `copy` `styles` `scripts` `vendor` and `imagemin` asynchronously 
-- `watch`  watches all directories in dev/ and preforms the proper tasks when files in the directory change
-- `upload`  sets up a watch on all directories in deploy/ and uploads changed files to a Shopify store. It's worth noting that if this task is run without any options, nothing will happen. This task accepts arguments in the form of 
+- `build`  runs and completes `clean` before running `copy` `styles` `scripts` `vendor` and `imagemin` asynchronously
 `--env [environment name]`, where `[environment name]` is the attribute inside of "./config.js that holds all the relavent data for the store you want to upload to (e.g. api key). If `--env` is entered, but no environment given, it defaults to "staging"
 
 ### Commonly run tasks
-`gulp` -cleans, rebuilds, and watches theme files without uploading to a Shopify store
-
-`gulp --env` -cleans, rebuilds, watches theme files, and uploads to 'staging' in config.json
-
-`gulp --env [environment name]` -cleans, rebuilds, watches theme files, and uploads to [environment name] in config.json
+- `gulp` -cleans, rebuilds, and watches theme files without uploading to a Shopify store
+- `gulp --env` -cleans, rebuilds, watches theme files, and uploads to whatever the default environment has been set to in the Gulpfile.
+- `gulp --env [environment name]` -cleans, rebuilds, watches theme files, and uploads to [environment name] in config.json
 
 ---
 
