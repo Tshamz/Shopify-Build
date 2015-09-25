@@ -1,24 +1,26 @@
-var gulp              = require('gulp');
-var changed           = require('gulp-changed');
-var sass              = require('gulp-sass');
-var autoprefixer      = require('gulp-autoprefixer');
-var cssmin            = require('gulp-minify-css');
-var sourcemaps        = require('gulp-sourcemaps');
-var concat            = require('gulp-concat');
-var uglify            = require('gulp-uglify');
-var notify            = require('gulp-notify');
-var plumber           = require('gulp-plumber');
-var imagemin          = require('gulp-imagemin');
-var shopify           = require('gulp-shopify-upload');
-var watch             = require('gulp-watch');
-var rename            = require('gulp-rename');
-var filter            = require('gulp-filter');
-var flatten           = require('gulp-flatten');
+var gulp               = require('gulp');
+var sass               = require('gulp-sass');
+var watch              = require('gulp-watch');
+var concat             = require('gulp-concat');
+var uglify             = require('gulp-uglify');
+var notify             = require('gulp-notify');
+var rename             = require('gulp-rename');
+var filter             = require('gulp-filter');
+var flatten            = require('gulp-flatten');
+var changed            = require('gulp-changed');
+var plumber            = require('gulp-plumber');
+var imagemin           = require('gulp-imagemin');
+var cssmin             = require('gulp-minify-css');
+var sourcemaps         = require('gulp-sourcemaps');
+var autoprefixer       = require('gulp-autoprefixer');
+var shopify            = require('gulp-shopify-upload');
 
-var del               = require('del');
-var argv              = require('yargs').argv;
-var runsequence       = require('run-sequence');
-var config            = require('./config.json');
+var del                = require('del');
+var argv               = require('yargs').argv;
+var runsequence        = require('run-sequence');
+var config             = require('./config.json');
+
+var defaultEnvironment = config.shopify.dev;
 
 var plumberErrorHandler = {
   errorHandler: notify.onError({
@@ -108,10 +110,12 @@ gulp.task('watch', ['build'], function() {
 });
 
 gulp.task('upload', ['watch'], function() {
-  if (argv.env && config.shopify.hasOwnProperty(argv.env)) {
+  if (!argv.env) {
+    return false;
+  } else if (argv.env && config.shopify.hasOwnProperty(argv.env)) {
     env = config.shopify[argv.env];
   } else {
-    return false;
+    env = defaultEnvironment;
   }
   return watch('deploy/{assets|layout|config|snippets|templates|locales}/**')
     .pipe(shopify(env.apiKey, env.password, env.url, env.themeId, env.options));

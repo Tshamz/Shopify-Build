@@ -18,13 +18,9 @@ This repository contains a fully capable Gulpfile.js intended for use with Shopi
 - Upload an entire theme (all theme files) at once to a Shopify store
 - Pre-render liquid templates enabling local development
 
----
-
 ## Installation
 
 After cloning the repository and moving into its root, from the command line run `npm install`. After the installation completes, you'll have access to to all of the gulp tasks.
-
----
 
 ## Tasks
 
@@ -38,13 +34,11 @@ After cloning the repository and moving into its root, from the command line run
 - `vendor` compiles, concatenates, autoprefixes, and minifies every .scss file located in vendor/styles and every .js file located in vendor/scripts into deploy/assets/vendor.css and deploy/assets/vendor.js
 - `imagemin`  minifies every image located in dev/images into deploy/assets
 - `copy`  copies every file in dev/liquid into deploy/ carrying the same directory structure
-- `build`  runs and completes `clean` before running `copy` `styles` `scripts` `vendor` and `imagemin` asynchronously 
+- `build`  runs and completes `clean` before running `copy` `styles` `scripts` `vendor` and `imagemin` asynchronously
 - `watch`  watches all directories in dev/ and preforms the proper tasks when files in the directory change
-- `upload`  sets up a watch on all directories in deploy/ and uploads changed files to a Shopify store. It's worth noting that if this task is run without any options, nothing will happen. This task accepts arguments in the form of 
+- `upload`  sets up a watch on all directories in deploy/ and uploads changed files to a Shopify store. It's worth noting that if this task is run without any options, nothing will happen. This task accepts arguments in the form of
 `--env [environment name]`, where `[environment name]` is the attribute inside of "./config.js that holds all the relavent data for the store you want to upload to (e.g. api key). If `--env` is entered, but no environment given, it defaults to "staging"
 
 Keep in mind that simply running `gulp` will fire off a number of those tasks in a specific order designed to make your development as easy as possible. Ideally you would only need to run `gulp` (or `gulp --env [environment name]`) once at the start of your project and then never again interact with the build tool while it takes care of chores for you in the background.
-
----
 
 Submit a pull request or share if you have any additional ideas.
