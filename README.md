@@ -1,4 +1,4 @@
-_(documentation related to environment setup and deployments can be found [here](http://bit.ly/1iQkAAW))_
+_documentation related to environment setup and deployments can be found [here](http://bit.ly/1iQkAAW)_
 
 Shopify Build Tool
 =====================
